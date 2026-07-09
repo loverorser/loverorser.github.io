@@ -159,6 +159,10 @@ Dependencies:
 ## 打包的时候
 
 - 如果不勾选`Include in Build`，那么需要**显式**将图集打包。图集所在的AB包，会依赖于，图集包含的图片们所在的AB包。
+- 如果不勾选`Include in Build`，并且**显式**将图集打包，并且不打包图片，那么图集所在的AB包会自动**隐式**把图片包含进去，**在Assets下没有图片**，可以通过`SpriteAtlas.GetSprite`来获取图片。
+
+
+
 - 如果勾选`Include in Build`，那么没有必要**显式**打包图集，如果**显式**打包图集了，那么情况和不勾选`Include in Build`一样。
 - 如果勾选`Include in Build`，在打包AB包的时候，该AB包内的图片如果在某个图集中，那么会**隐式**把这个图集包含进AB包中。
 - 如果勾选`Include in Build`，在打包AB包的时候，如果图片A在第一个AB包中，图片B在第二个AB包中，那么图集会**隐式**打两份，一份在第一个AB包中，一份在第二个AB包中。
